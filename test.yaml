@@ -1,0 +1,20 @@
+- name: A playbook
+  hosts: localhost
+  tasks:
+    - name: Say hello
+      hello:
+        name: World
+      register: hello1
+
+    - name: Output
+      debug:
+        msg: '{{ hello1 }}'
+
+    - name: and again
+      hello:
+        name: Bob
+      register: hello2
+
+    - name: Output2
+      debug:
+        msg: '{{ hello2 }}'
